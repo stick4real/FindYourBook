@@ -1,0 +1,19 @@
+{
+  "name": "findyourbook",
+  "version": "1.0.0",
+  "description": "Mobile application of books in Titanium and nodejs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Maxime Dumont",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "mongoose": "^4.1.10",
+    "passport": "^0.3.0",
+    "passport-http": "^0.3.0"
+  }
+}
