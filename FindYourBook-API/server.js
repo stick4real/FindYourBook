@@ -8,6 +8,8 @@ var bookController = require('./controllers/bookController'),
     userController = require('./controllers/userController'),
     authController = require('./controllers/authController');
 
+var config = require('./config');
+
 // Create our Express application
 var app = express();
 
@@ -24,15 +26,12 @@ app.use(passport.initialize());
 // Create our Express router
 var router = express.Router();
 
-// Build the connection string 
-var dbURI = 'mongodb://localhost/FindYourBook'; 
-
-mongoose.connect(dbURI); 
+mongoose.connect(config.database); 
 
 // CONNECTION EVENTS
 // When successfully connected
 mongoose.connection.on('connected', function () {  
-  console.log('Mongoose default connection open to ' + dbURI);
+  console.log('Mongoose default connection open');
 }); 
 
 // If the connection throws an error
@@ -47,6 +46,19 @@ process.on('SIGINT', function() {
     process.exit(0); 
   }); 
 }); 
+
+// app.all('/*', function(req, res, next) {
+//     // CORS headers
+//     res.header("Access-Control-Allow-Origin", "*"); // restrict it to the required domain
+//     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+//     // Set custom headers for CORS
+//     res.header('Access-Control-Allow-Headers', 'Content-type,Accept,X-Access-Token,X-Key');
+//     if (req.method == 'OPTIONS') {
+//         res.status(200).end();
+//     } else {
+//         next();
+//     }
+// });
 
 // Create endpoint handlers for /books
 router.route('/books')

@@ -8,10 +8,11 @@ exports.postUsers = function(req, res) {
   });
 
   user.save(function(err) {
-    if (err)
+    if (err){
       res.send(err);
-
-    res.json({ message: 'New book reader added !' });
+    } else {
+      res.json({ message: 'New book reader added !' });
+    }
   });
 };
 

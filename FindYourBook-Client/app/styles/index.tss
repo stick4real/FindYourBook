@@ -1,0 +1,24 @@
+".container": {
+	backgroundColor:"white",
+	layout: "vertical",
+	top: 20
+}
+
+"Label": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: "#000"
+}
+
+"TextField": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: "#000"
+}
+
+"#login_label": {
+	top: 5,
+	font: {
+		fontSize: 12
+	}
+}
