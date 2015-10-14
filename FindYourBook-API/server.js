@@ -3,11 +3,6 @@ var express     = require('express'),
     bodyParser  = require('body-parser'),
     passport    = require('passport');
 
-
-var bookController = require('./controllers/bookController'),
-    userController = require('./controllers/userController'),
-    authController = require('./controllers/authController');
-
 var config = require('./config');
 
 // Create our Express application
@@ -60,21 +55,14 @@ process.on('SIGINT', function() {
 //     }
 // });
 
-// Create endpoint handlers for /books
-router.route('/books')
-  .post(authController.isAuthenticated, bookController.postBooks)
-  .get(authController.isAuthenticated, bookController.getBooks);
+// Create endpoint handlers for /login
+router.use('/login', require('./auth/index'));
 
-// Create endpoint handlers for /books/:book_id
-router.route('/books/:book_id')
-  .get(authController.isAuthenticated, bookController.getBook)
-  .put(authController.isAuthenticated, bookController.putBook)
-  .delete(authController.isAuthenticated, bookController.deleteBook);
+// Create endpoint handlers for /books
+router.use('/books', require('./book/index'));
 
 // Create endpoint handlers for /users
-router.route('/users')
-  .post(userController.postUsers)
-  .get(userController.getUsers);
+router.use("/users", require('./user/index'));
 
 // Register all our routes with /api
 app.use('/api', router);

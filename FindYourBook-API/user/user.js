@@ -1,7 +1,7 @@
 var User = require('../models/userModel');
 
 // Create endpoint /api/users for POST
-exports.postUsers = function(req, res) {
+exports.create = function(req, res) {
   var user = new User({
     username: req.body.username,
     password: req.body.password
