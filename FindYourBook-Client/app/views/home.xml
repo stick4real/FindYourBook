@@ -1,0 +1,10 @@
+<Alloy>
+    <TabGroup id="tabGroup">
+        <Tab id="profileTab" title="Profile">
+            <Require src="profile" type="view"/>
+        </Tab>
+        <Tab id="SearchTab" title="Search">
+            <Require src="search" type="view"/>
+        </Tab>
+     </TabGroup>
+</Alloy>

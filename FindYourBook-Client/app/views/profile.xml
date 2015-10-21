@@ -1,0 +1,6 @@
+<Alloy>
+	<Window id="profile" class="container">
+		<Label id="profile_label">Profile</Label>
+		<Label id="username_label"></Label>
+	</Window>
+</Alloy>

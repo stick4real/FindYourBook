@@ -1,0 +1,6 @@
+"#register_label": {
+	top: 5,
+	font: {
+		fontSize: 12
+	}
+}

@@ -1,0 +1,9 @@
+<Alloy>
+	<Window class="container">
+		<Label id="register_label">Register</Label>
+		<Label id="username_label">username : </Label> <TextField id="username" />
+		<Label id="password_label">password : </Label> <TextField id="password" />
+		<Button id="register_button"  title="Register"/>
+		<Button id="login_button"  title="login"/>
+	</Window>
+</Alloy>

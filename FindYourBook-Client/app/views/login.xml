@@ -1,8 +1,9 @@
 <Alloy>
-	<Window class="container">
-		<Label id="login_label">Login</Label>
+	<Window id="login" class="container">
+		<Label id="login_label">login</Label>
 		<Label id="username_label">username : </Label> <TextField id="username" />
 		<Label id="password_label">password : </Label> <TextField id="password" />
-		<Button id="login_button"  title="Login"/>
+		<Button id="login_button"  title="login"/>
+		<Button id="register_button"  title="Register"/>
 	</Window>
 </Alloy>

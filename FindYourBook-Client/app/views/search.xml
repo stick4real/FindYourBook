@@ -1,0 +1,7 @@
+<Alloy>
+	<Window id="search" class="container">
+		<Label id="search_label">Search Books : </Label> 
+		<TextField id="searchData" />
+		<Button id="search_button"  title="search"/>
+	</Window>
+</Alloy>

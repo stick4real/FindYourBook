@@ -58,6 +58,8 @@ process.on('SIGINT', function() {
 // Create endpoint handlers for /login
 router.use('/login', require('./auth/index'));
 
+// router.use(auth.authentification());
+
 // Create endpoint handlers for /books
 router.use('/books', require('./book/index'));
 

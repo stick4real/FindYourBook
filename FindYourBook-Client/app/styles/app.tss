@@ -24,3 +24,21 @@ overrode the settings with other TSS, XML, or JS settings:
 }
 
 */
+
+".container": {
+	backgroundColor:"white",
+	layout: "vertical",
+	top: 20
+}
+
+"Label": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: "#000"
+}
+
+"TextField": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: "#000"
+}

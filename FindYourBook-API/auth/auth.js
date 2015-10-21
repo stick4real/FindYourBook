@@ -26,6 +26,7 @@ exports.login = function(req, res) {
                 if (!isMatch) { 
                     res.json({ success: false, message: 'Authentication failed. Wrong password.' });
                 } else {
+                    user.token = null;
 
                     // if user is found and password is right
                     // create a token
@@ -33,11 +34,14 @@ exports.login = function(req, res) {
                         expiresIn: 1440 // expires in 24 hours
                     });
 
+                    user.token = token;
+                    user.save();
+
                     // return the information including token as JSON
                     res.json({
                         success: true,
                         message: 'Enjoy your token!',
-                        token: token
+                        token: token,
                     });
                 }   
             });
