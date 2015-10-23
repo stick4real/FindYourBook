@@ -1,6 +1,7 @@
 <Alloy>
 	<Window class="container">
-		<Label id="register_label">Register</Label>
+		<Label id="register_label">REGISTER</Label>
+		<!-- <ImageView id="logo" image="/images/books8.png" /> -->
 		<Label id="username_label">username : </Label> <TextField id="username" />
 		<Label id="password_label">password : </Label> <TextField id="password" />
 		<Button id="register_button"  title="Register"/>

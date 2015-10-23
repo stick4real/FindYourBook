@@ -1,0 +1,7 @@
+<Alloy>
+    <TableViewRow id="rowBook">
+    	<ImageView id="imageBook"/>
+    	<Label id="bookTitle"/>
+    	<Label id="bookAuthor"/>
+    </TableViewRow>
+</Alloy>

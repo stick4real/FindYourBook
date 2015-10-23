@@ -1,0 +1,12 @@
+"#rowBook": {
+	height: 110,
+	backgroundSelectedColor: "white",
+}
+
+"#imageBook": {
+	left: 5
+}
+
+"#bookTitle": {
+	top: 10
+}

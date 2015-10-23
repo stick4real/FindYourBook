@@ -1,4 +1,4 @@
-"#register_label": {
+"#book_label": {
 	height:	50, 
 	width: Titanium.UI.FILL,
 	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
@@ -7,8 +7,4 @@
 	font: {
 		fontSize: 12
 	}
-}
-
-"#username_label": {
-	top: 100
 }

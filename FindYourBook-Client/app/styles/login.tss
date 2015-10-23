@@ -1,6 +1,14 @@
 "#login_label": {
-	top: 5,
+	height:	50, 
+	width: Titanium.UI.FILL,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	color: "#ecf0f1",
+	backgroundColor: "#2c3e50",
 	font: {
 		fontSize: 12
 	}
+}
+
+"#username_label": {
+	top: 100
 }

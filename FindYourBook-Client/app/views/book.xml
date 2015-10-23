@@ -1,0 +1,10 @@
+<Alloy>
+	<Window id="book" class="container">
+		<Label id="book_label"></Label>
+		<ImageView id="imageBook"/>
+		<Label id="author_label"></Label>
+		<Label id="description_label"></Label>
+		<Button id="buy_button"  title="Buy"/>
+		<Button id="sell_button"  title="Sell"/>
+	</Window>
+</Alloy>
