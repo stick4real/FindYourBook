@@ -10,13 +10,13 @@ $.rowBook.addEventListener('click', function (e){
         onload : function(e) {
 
             var data = JSON.parse(this.responseText);
+            var id = data.id;
             var title = data.volumeInfo.title;
-            
             var author = data.volumeInfo.authors != undefined ? data.volumeInfo.authors[0] : "";
             var description = data.volumeInfo.description != undefined ? data.volumeInfo.description : "";
             var img = data.volumeInfo.imageLinks != undefined ? data.volumeInfo.imageLinks.thumbnail : "";
 
-            Alloy.createController('book', { title: title, author: author, img: img, description: description}).getView().open();
+            Alloy.createController('book', { id: id, title: title, author: author, img: img, description: description}).getView().open();
 
         },
         // function called when an error occurs, including a timeout

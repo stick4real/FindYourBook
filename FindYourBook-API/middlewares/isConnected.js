@@ -8,6 +8,8 @@ module.exports = function(req, res, next){
 		  if (err) {
 		  	console.log(err);
 		  } else {
+		  	req.FYB = {};
+		  	req.FYB.decoded = decoded;
 		  	next();
 		  }
 		});

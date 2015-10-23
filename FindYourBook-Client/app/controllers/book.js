@@ -6,10 +6,10 @@ $.description_label.html = args.description;
 
 $.buy_button.addEventListener('click', function (e){
 	// TODO
-	// Call api for buy book function
+	// Call view to buy book
 });
 
 $.sell_button.addEventListener('click', function (e){
-	// TODO
-	// Call api for sell book function
+	$.sell_button.removeEventListener('click', arguments.callee);
+	$.scrollBook.add(Alloy.createController('sellBook', {id: args.id, title: args.title, author: args.author, img: args.img, description: args.description}).getView());
 });

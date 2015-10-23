@@ -1,7 +1,7 @@
 $.register_button.addEventListener('click', function (e){
-	args = {};
-	args.username = $.username.value;
-	args.password = $.password.value;
+	data = {};
+	data.username = $.username.value;
+	data.password = $.password.value;
 	var url = "http://10.0.3.2:3000/api/users";
  	var client = Ti.Network.createHTTPClient({
     // function called when the response data is available
@@ -20,7 +20,7 @@ $.register_button.addEventListener('click', function (e){
  	// Prepare the connection.
  	client.open("POST", url);
  	// Send the request.
- 	client.send(args);
+ 	client.send(data);
 
 })
 

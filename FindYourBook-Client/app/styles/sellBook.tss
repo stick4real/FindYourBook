@@ -1,0 +1,10 @@
+"#sellBook": {
+	top: 15,
+	height:	Titanium.UI.SIZE, 
+	width: Titanium.UI.FILL,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+}
+
+"#start_sell_button": {
+	bottom: 10
+}

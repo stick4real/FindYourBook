@@ -1,0 +1,7 @@
+<Alloy>
+	<View id="sellBook" class="container">
+		<Label id="price_label">price : </Label> <TextField id="price" />
+		<Label id="state_label">state : </Label> <TextField id="state" />
+		<Button id="start_sell_button"  title="Ok"/>
+	</View>
+</Alloy>

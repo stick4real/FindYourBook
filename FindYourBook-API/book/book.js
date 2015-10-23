@@ -3,16 +3,19 @@ var Book = require('../models/bookModel');
 // Create endpoint /api/books for POSTS
 exports.sell = function(req, res) {
   // Create a new instance of the Book model
+
   var book = new Book();
 
   // Set the book properties that came from the POST data
+
   book.googleId = req.body.googleId;
   book.title = req.body.title;
   book.description = req.body.description;
   book.author = req.body.author;
   book.price = req.body.price;
   book.state = req.body.state;
-  book.userId = req.user._id;
+  book.userId = req.FYB.decoded._id;
+  book.img = req.body.img;
 
   // Save the book and check for errors
   book.save(function(err) {
