@@ -1,7 +1,6 @@
 var express     = require('express'),
     mongoose    = require('mongoose'),
-    bodyParser  = require('body-parser'),
-    passport    = require('passport');
+    bodyParser  = require('body-parser');
 
 var config = require('./config');
 
@@ -14,9 +13,6 @@ app.use(bodyParser.urlencoded({
 }));
 
 var port = process.env.PORT || 3000;
-
-// Use the passport package in our application
-app.use(passport.initialize());
 
 // Create our Express router
 var router = express.Router();

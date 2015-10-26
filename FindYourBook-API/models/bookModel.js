@@ -8,8 +8,8 @@ var BookSchema = new Schema({
     author: String,
     price: Number,
     state: String,
-    userId: String,
+    _userId : { type: Schema.Types.ObjectId, ref: 'User' },
     img: String
 });
 
-module.exports = mongoose.model('Book', BookSchema);
+module.exports = mongoose.model('Book', BookSchema, 'Book');

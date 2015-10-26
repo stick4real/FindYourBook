@@ -6,5 +6,5 @@
         <Tab id="SearchTab" title="Search">
             <Require src="search" type="view"/>
         </Tab>
-     </TabGroup>
+    </TabGroup>
 </Alloy>

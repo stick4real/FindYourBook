@@ -1,6 +1,6 @@
 var mongoose = require('mongoose'),
+    Schema = mongoose.Schema,
     bcrypt   = require('bcrypt-nodejs');
-
 
 var UserSchema = new mongoose.Schema({
   username: {
@@ -14,7 +14,8 @@ var UserSchema = new mongoose.Schema({
   },
   token: {
     type: String
-  }
+  },
+  _books : [{ type: Schema.Types.ObjectId, ref: 'Book' }]
 });
 
 UserSchema.methods.verifyPassword = function(password, cb) {
@@ -41,4 +42,4 @@ UserSchema.pre('save', function(callback) {
   });
 });
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('User', UserSchema, 'User');

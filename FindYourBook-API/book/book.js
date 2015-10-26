@@ -1,4 +1,5 @@
-var Book = require('../models/bookModel');
+var Book = require('../models/bookModel'),
+    User = require('../models/userModel');
 
 // Create endpoint /api/books for POSTS
 exports.sell = function(req, res) {
@@ -14,7 +15,7 @@ exports.sell = function(req, res) {
   book.author = req.body.author;
   book.price = req.body.price;
   book.state = req.body.state;
-  book.userId = req.FYB.decoded._id;
+  book._userId = req.FYB.decoded._id;
   book.img = req.body.img;
 
   // Save the book and check for errors
@@ -22,31 +23,51 @@ exports.sell = function(req, res) {
     if (err)
       res.send(err);
 
+    User.findById(req.FYB.decoded._id, function(err, user) {
+      if (err)
+        res.send(err);
+
+      user._books.push(book._id);
+      user.save(function(err) {
+          if (err){
+            res.send(err);
+          }
+      });
+    });
+
     res.json({ message: 'Book added !', data: book });
   });
 };
 
-// Create endpoint /api/books for GET
-exports.getBooks = function(req, res) {
-  // Use the Book model to find all books
-  Book.find({}, function(err, books) {
-    if (err)
-      res.send(err);
-
-    res.json(books);
-  });
-};
-
-// // Create endpoint /api/books/:book_id for GET
-// exports.getBook = function(req, res) {
-//   // Use the Book model to find a specific book
-//   Book.findById({ userId: req.user._id, _id: req.params.book_id }, function(err, book) {
+// // Create endpoint /api/books for GET
+// exports.getBooksss = function(req, res) {
+//   // Use the Book model to find all books
+//   Book.find({}, function(err, books) {
 //     if (err)
 //       res.send(err);
 
-//     res.json(book);
+//     res.json(books);
 //   });
 // };
+
+// Create endpoint /api/books/:book_id for GET
+exports.getBooks = function(req, res) {
+  // Use the Book model to find a specific book
+  // Book.findById({ userId: req.FYB.decoded._id }, function(err, book) {
+  //   if (err)
+  //     res.send(err);
+
+  //   res.json(book);
+  // });
+    // Book.findById({ _userId : req.FYB.decoded._id })
+    // .populate(_userId)
+    // .exec(function(err, books){
+    //     if (err) 
+    //       res.send(err);
+
+    //     res.json(books);
+    // });
+};
 
 // // Create endpoint /api/books/:book_id for PUT
 // exports.putBook = function(req, res) {
