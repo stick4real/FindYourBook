@@ -12,19 +12,18 @@ var client = Ti.Network.createHTTPClient({
 
 	    $.username_label.setText(data.username);
 
-	    // if (data._books.length != 0) {
-	    // 	data._books.forEach(function(element){
-	    //         var title = element.volumeInfo.title;
-	    //         var id = element.id;
-
-	    //         var author = element.volumeInfo.authors != undefined ? element.volumeInfo.authors[0] : "";
-	    //         var img = element.volumeInfo.imageLinks != undefined ? element.volumeInfo.imageLinks.smallThumbnail : "";
+	    if (data._books.length != 0) {
+	    	data._books.forEach(function(element){
+	    		var img = element.img != undefined ? element.img: "";
+	    		var title = element.title;
+	    		var status = element.status == true ? "En vente" : "Vente terminée";
+	    		var price = element.price;
 	            
-	    //         var row = Alloy.createController('rowSearch', {id: id, title: title, author: author, img: img}).getView();
-	    //         tableData.push(row);
-	    //     });
-	    //     $.tableProfile.setData(tableData);
-	    // };
+	            var rowProfile = Alloy.createController('rowProfile', {img: img, title: title, status: status, price: price }).getView();
+	            tableData.push(rowProfile);
+	        });
+	        $.tableProfile.setData(tableData);
+	    };
 	},
 	// function called when an error occurs, including a timeout
 	onerror : function(e) {

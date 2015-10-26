@@ -9,6 +9,10 @@
 	}
 }
 
+"#password": {
+    passwordMask: true
+}
+
 "#username_label": {
 	top: 100
 }

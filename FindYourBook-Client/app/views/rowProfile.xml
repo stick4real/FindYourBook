@@ -1,0 +1,8 @@
+<Alloy>
+    <TableViewRow id="rowProfile">
+        <ImageView id="imageBookProfile"/>
+        <Label id="bookTitleProfile"/>
+        <Label id="bookPriceProfile"/>
+        <Label id="bookStatusProfile"/>
+    </TableViewRow>
+</Alloy>

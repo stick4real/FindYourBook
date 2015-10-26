@@ -17,6 +17,7 @@ exports.sell = function(req, res) {
   book.state = req.body.state;
   book._userId = req.FYB.decoded._id;
   book.img = req.body.img;
+  book.status = true;
 
   // Save the book and check for errors
   book.save(function(err) {

@@ -9,7 +9,8 @@ var BookSchema = new Schema({
     price: Number,
     state: String,
     _userId : { type: Schema.Types.ObjectId, ref: 'User' },
-    img: String
+    img: String,
+    status: Boolean
 });
 
 module.exports = mongoose.model('Book', BookSchema, 'Book');

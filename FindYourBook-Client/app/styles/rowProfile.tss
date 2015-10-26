@@ -1,0 +1,20 @@
+"#rowProfile": {
+    height: 110,
+    backgroundSelectedColor: "#2c3e50",
+}
+
+"#imageBookProfile": {
+    left: 5
+}
+
+"#bookTitleProfile": {
+    top: 10
+}
+
+"#bookPriceProfile": {
+    top: 45
+}
+
+"#bookStatusProfile": {
+    top: 75
+}

@@ -1,6 +1,6 @@
 "#rowBook": {
 	height: 110,
-	backgroundSelectedColor: "white",
+	backgroundSelectedColor: "#2c3e50",
 }
 
 "#imageBook": {
