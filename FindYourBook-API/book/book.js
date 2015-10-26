@@ -27,15 +27,15 @@ exports.sell = function(req, res) {
 };
 
 // Create endpoint /api/books for GET
-// exports.getBooks = function(req, res) {
-//   // Use the Book model to find all books
-//   Book.find({}, function(err, books) {
-//     if (err)
-//       res.send(err);
+exports.getBooks = function(req, res) {
+  // Use the Book model to find all books
+  Book.find({}, function(err, books) {
+    if (err)
+      res.send(err);
 
-//     res.json(books);
-//   });
-// };
+    res.json(books);
+  });
+};
 
 // // Create endpoint /api/books/:book_id for GET
 // exports.getBook = function(req, res) {

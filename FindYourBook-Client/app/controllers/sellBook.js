@@ -21,7 +21,9 @@ $.start_sell_button.addEventListener('click', function (e){
 		// function called when the response data is available
 		onload : function(e) {
 		    var data = JSON.parse(this.responseText);
-		    console.log(data);
+		    if (data != undefined) {
+		    	Alloy.createController('home').getView().open();
+		    };
 		},
 		// function called when an error occurs, including a timeout
 		onerror : function(e) {
