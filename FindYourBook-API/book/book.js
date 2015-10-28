@@ -53,21 +53,20 @@ exports.sell = function(req, res) {
 
 // Create endpoint /api/books/:book_id for GET
 exports.getBooks = function(req, res) {
-  // Use the Book model to find a specific book
-  // Book.findById({ userId: req.FYB.decoded._id }, function(err, book) {
+  // Book.find({googleId: req.params.idBook, _userId: {'$ne': req.FYB.decoded._id} }, function(err, books){
   //   if (err)
   //     res.send(err);
-
-  //   res.json(book);
+  //   res.json(books);
   // });
-    // Book.findById({ _userId : req.FYB.decoded._id })
-    // .populate(_userId)
-    // .exec(function(err, books){
-    //     if (err) 
-    //       res.send(err);
 
-    //     res.json(books);
-    // });
+  Book.find({googleId: req.params.idBook, _userId: {'$ne': req.FYB.decoded._id} })
+    .populate('_userId')
+    .exec(function(err, books){
+      if (err)
+        res.send(err);
+      res.json(books);
+    });
+
 };
 
 // // Create endpoint /api/books/:book_id for PUT

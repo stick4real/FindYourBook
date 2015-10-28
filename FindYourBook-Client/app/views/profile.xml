@@ -2,6 +2,7 @@
 	<Window id="profile" class="container">
 		<Label id="profile_label">Profile</Label>
 		<Label id="username_label"></Label>
+        <Button id="logout_button" title="logout"/>
         <TableView id="tableProfile">
         </TableView>
 	</Window>

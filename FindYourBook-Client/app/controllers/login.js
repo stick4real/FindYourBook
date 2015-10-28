@@ -10,21 +10,13 @@ $.login_button.addEventListener('click', function (e){
  	var client = Ti.Network.createHTTPClient({
     // function called when the response data is available
     	onload : function(e) {
-            var TokenCollection = Alloy.createCollection('token');
-            TokenCollection.fetch();
-            if (TokenCollection.length != 0) {
                 var data = JSON.parse(this.responseText);
-                var TokenModel = TokenCollection.at(0);
-                TokenModel.save({token: data.token});
-                Alloy.createController('home').getView().open();
-            }else {
-                var data = JSON.parse(this.responseText);
-                var token = Alloy.createModel('token', {token: data.token});
+                var token = Alloy.createModel('token', { token: data.token});
                 token.save();
-                var TokenCollection = Alloy.createCollection('token');
-                TokenCollection.fetch();
+                token.fetch();
+                Alloy.Globals.Token = token;
                 Alloy.createController('home').getView().open();
-            }
+            // }
      	},
      	// function called when an error occurs, including a timeout
      	onerror : function(e) {

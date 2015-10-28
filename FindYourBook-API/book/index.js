@@ -4,7 +4,7 @@ isConnected = require('../middlewares/isConnected');
 module.exports = function(){
 	book = require('./book');
 
-  	// router.get("/", isConnected, book.getBooks);
+  	router.get("/:idBook", isConnected, book.getBooks);
   	router.post("/sell", isConnected, book.sell);
   	// router.post("/", user.postUsers);
 

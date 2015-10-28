@@ -1,0 +1,7 @@
+<Alloy>
+    <TableViewRow id="rowBook">
+        <Label id="bookSeller" class="left"/>
+        <Label id="bookPrice" class="middle"/>
+        <Label id="bookState" class="right"/>
+    </TableViewRow>
+</Alloy>

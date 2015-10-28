@@ -1,7 +1,12 @@
-var TokenCollection = Alloy.Collections.instance('token');
-TokenCollection.fetch();
-var TokenModel = TokenCollection.at(0);
-var token = TokenModel.get("token");
+// var TokenCollection = Alloy.Collections.instance('token');
+// // console.log(TokenCollection);
+// TokenCollection.fetch();
+// console.log(TokenCollection);
+// var TokenModel = TokenCollection.at(0);
+// var token = TokenModel.get("token");
+
+var tokenModel = Alloy.Globals.Token;
+var token = tokenModel.get('token');
 
 var url = "http://10.0.3.2:3000/api/users";
 var client = Ti.Network.createHTTPClient({
@@ -40,3 +45,11 @@ client.setRequestHeader('token', token);
 
 // Send the request.
 client.send();
+
+$.logout_button.addEventListener('click', function (e){
+    var TokenCollection = Alloy.Collections.instance('token');
+    while (TokenCollection.length > 0)
+    TokenCollection.at(0).destroy();
+    Alloy.Globals.Token = undefined;
+    Alloy.createController('login').getView().open();
+})

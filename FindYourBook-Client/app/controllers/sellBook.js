@@ -2,10 +2,8 @@ var args = arguments[0] || {};
 
 $.start_sell_button.addEventListener('click', function (e){
 
-	var TokenCollection = Alloy.Collections.instance('token');
-	TokenCollection.fetch();
-	var TokenModel = TokenCollection.at(0);
-	var token = TokenModel.get("token");
+	var tokenModel = Alloy.Globals.Token;
+	var token = tokenModel.get('token');
 
 	var data = {};
 	data.googleId = args.id;

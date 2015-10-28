@@ -5,8 +5,7 @@ $.imageBook.image = args.img;
 $.description_label.html = args.description;
 
 $.buy_button.addEventListener('click', function (e){
-	// TODO
-	// Call view to buy book
+	Alloy.createController('buyBook', {id: args.id}).getView().open();
 });
 
 $.sell_button.addEventListener('click', function (e){
