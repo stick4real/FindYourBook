@@ -40,24 +40,8 @@ exports.sell = function(req, res) {
   });
 };
 
-// // Create endpoint /api/books for GET
-// exports.getBooksss = function(req, res) {
-//   // Use the Book model to find all books
-//   Book.find({}, function(err, books) {
-//     if (err)
-//       res.send(err);
-
-//     res.json(books);
-//   });
-// };
-
 // Create endpoint /api/books/:book_id for GET
 exports.getBooks = function(req, res) {
-  // Book.find({googleId: req.params.idBook, _userId: {'$ne': req.FYB.decoded._id} }, function(err, books){
-  //   if (err)
-  //     res.send(err);
-  //   res.json(books);
-  // });
 
   Book.find({googleId: req.params.idBook, _userId: {'$ne': req.FYB.decoded._id} })
     .populate('_userId')
@@ -68,34 +52,3 @@ exports.getBooks = function(req, res) {
     });
 
 };
-
-// // Create endpoint /api/books/:book_id for PUT
-// exports.putBook = function(req, res) {
-//   // Use the Book model to find a specific book
-//   Book.findById({ userId: req.user._id, _id: req.params.book_id }, function(err, book) {
-//     if (err)
-//       res.send(err);
-
-//     // Update the existing book state
-//     book.state = req.body.state;
-
-//     // Save the book and check for errors
-//     book.save(function(err) {
-//       if (err)
-//         res.send(err);
-
-//       res.json(book);
-//     });
-//   });
-// };
-
-// // Create endpoint /api/books/:book_id for DELETE
-// exports.deleteBook = function(req, res) {
-//   // Use the Book model to find a specific book and remove it
-//   Book.findByIdAndRemove({ userId: req.user._id, _id: req.params.book_id }, function(err) {
-//     if (err)
-//       res.send(err);
-
-//     res.json({ message: 'Book deleted !' });
-//   });
-// };

@@ -6,7 +6,6 @@ module.exports = function(){
 
   	router.get("/:idBook", isConnected, book.getBooks);
   	router.post("/sell", isConnected, book.sell);
-  	// router.post("/", user.postUsers);
 
   	return router;
 }();
