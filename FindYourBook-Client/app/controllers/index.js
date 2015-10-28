@@ -1,4 +1,4 @@
-Alloy.createController('login').getView().open();
+Alloy.createController('User/login').getView().open();
 
 
 

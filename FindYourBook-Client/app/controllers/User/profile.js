@@ -24,7 +24,7 @@ var client = Ti.Network.createHTTPClient({
 	    		var status = element.status == true ? "En vente" : "Vente terminée";
 	    		var price = element.price;
 	            
-	            var rowProfile = Alloy.createController('rowProfile', {img: img, title: title, status: status, price: price }).getView();
+	            var rowProfile = Alloy.createController('User/Row/rowProfile', {img: img, title: title, status: status, price: price }).getView();
 	            tableData.push(rowProfile);
 	        });
 	        $.tableProfile.setData(tableData);
@@ -51,5 +51,5 @@ $.logout_button.addEventListener('click', function (e){
     while (TokenCollection.length > 0)
     TokenCollection.at(0).destroy();
     Alloy.Globals.Token = undefined;
-    Alloy.createController('login').getView().open();
+    Alloy.createController('User/login').getView().open();
 })

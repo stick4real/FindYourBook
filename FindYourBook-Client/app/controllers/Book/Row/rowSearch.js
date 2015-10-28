@@ -16,7 +16,7 @@ $.rowBook.addEventListener('click', function (e){
             var description = data.volumeInfo.description != undefined ? data.volumeInfo.description : "";
             var img = data.volumeInfo.imageLinks != undefined ? data.volumeInfo.imageLinks.thumbnail : "";
 
-            Alloy.createController('book', { id: id, title: title, author: author, img: img, description: description}).getView().open();
+            Alloy.createController('Book/book', { id: id, title: title, author: author, img: img, description: description}).getView().open();
 
         },
         // function called when an error occurs, including a timeout

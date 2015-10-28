@@ -1,13 +1,22 @@
 $.register_button.addEventListener('click', function (e){
+    Alloy.createController('/User/register').getView().open();
+})
+
+$.login_button.addEventListener('click', function (e){
 	data = {};
 	data.username = $.username.value;
 	data.password = $.password.value;
-	var url = "http://10.0.3.2:3000/api/users";
+	var url = "http://10.0.3.2:3000/api/login";
  	var client = Ti.Network.createHTTPClient({
     // function called when the response data is available
     	onload : function(e) {
-         	Ti.API.info("Received text: " + this.responseText);
-         	Alloy.createController('login').getView().open();
+                var data = JSON.parse(this.responseText);
+                var token = Alloy.createModel('token', { token: data.token});
+                token.save();
+                token.fetch();
+                Alloy.Globals.Token = token;
+                Alloy.createController('home').getView().open();
+            // }
      	},
      	// function called when an error occurs, including a timeout
      	onerror : function(e) {
@@ -22,8 +31,4 @@ $.register_button.addEventListener('click', function (e){
  	// Send the request.
  	client.send(data);
 
-})
-
-$.login_button.addEventListener('click', function (e){
-    Alloy.createController('login').getView().open();
 })

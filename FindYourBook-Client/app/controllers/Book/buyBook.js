@@ -16,7 +16,7 @@ var client = Ti.Network.createHTTPClient({
             var seller = element._userId.username;
             var state = element.state;
             var price = element.price;
-            var rowBook = Alloy.createController('rowBook', {seller: seller, state: state, price: price}).getView();
+            var rowBook = Alloy.createController('Book/Row/rowBook', {seller: seller, state: state, price: price}).getView();
             tableData.push(rowBook);
         });
         $.tableBook.setData(tableData);

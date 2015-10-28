@@ -15,7 +15,7 @@ $.search_button.addEventListener('click', function (e){
                 var author = element.volumeInfo.authors != undefined ? element.volumeInfo.authors[0] : "";
                 var img = element.volumeInfo.imageLinks != undefined ? element.volumeInfo.imageLinks.smallThumbnail : "";
                 
-                var rowSearch = Alloy.createController('rowSearch', {id: id, title: title, author: author, img: img}).getView();
+                var rowSearch = Alloy.createController('Book/Row/rowSearch', {id: id, title: title, author: author, img: img}).getView();
                 tableData.push(rowSearch);
             });
             $.tableBook.setData(tableData);
