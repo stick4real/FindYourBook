@@ -1,6 +1,8 @@
 var Book = require('../models/bookModel'),
     User = require('../models/userModel');
 
+var _ = require('underscore');
+
 // Create endpoint /api/books for POSTS
 exports.sell = function(req, res) {
   // Create a new instance of the Book model
@@ -21,22 +23,21 @@ exports.sell = function(req, res) {
 
   // Save the book and check for errors
   book.save(function(err) {
-    if (err)
-      res.send(err);
-
-    User.findById(req.FYB.decoded._id, function(err, user) {
-      if (err)
-        res.send(err);
-
-      user._books.push(book._id);
-      user.save(function(err) {
-          if (err){
-            res.send(err);
-          }
+    if (err){
+      var errors = {error:[]};
+      _.each(err.errors, function(element){
+        errors.error.push(element.message);
       });
-    });
+      res.json(errors);
+    } else {
+      User.findOneAndUpdate({ _id: req.FYB.decoded._id}, { $push:{ _books: book._id }}, {}, function(err, user){
+        if (err)
+          console.log(err);
 
-    res.json({ message: 'Book added !', data: book });
+        res.json({ message: 'Book added !', data: book});
+
+      });
+    }
   });
 };
 

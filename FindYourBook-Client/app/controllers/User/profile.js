@@ -1,10 +1,3 @@
-// var TokenCollection = Alloy.Collections.instance('token');
-// // console.log(TokenCollection);
-// TokenCollection.fetch();
-// console.log(TokenCollection);
-// var TokenModel = TokenCollection.at(0);
-// var token = TokenModel.get("token");
-
 var tokenModel = Alloy.Globals.Token;
 var token = tokenModel.get('token');
 

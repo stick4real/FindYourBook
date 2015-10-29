@@ -1,6 +1,7 @@
 var User = require('../models/userModel');
 var config = require('../config');
 var jwt = require('jsonwebtoken');
+var _ = require('underscore');
 
 // Create endpoint /api/users for POST
 exports.create = function(req, res) {
@@ -11,7 +12,11 @@ exports.create = function(req, res) {
 
   user.save(function(err) {
     if (err){
-      res.send(err);
+      var errors = {error:[]};
+      _.each(err.errors, function(element){
+        errors.error.push(element.message);
+      });
+      res.json(errors);
     } else {
       res.json({ message: 'New book reader added !' });
     }
@@ -24,17 +29,6 @@ exports.getUser = function(req, res) {
     .exec(function(err, user){
         if (err) 
           res.send(err);
-
         res.json(user);
     });
 }
-
-// Create endpoint /api/users for GET
-exports.getUsers = function(req, res) {
-  User.find(function(err, users) {
-    if (err)
-      res.send(err);
-
-    res.json(users);
-  });
-};

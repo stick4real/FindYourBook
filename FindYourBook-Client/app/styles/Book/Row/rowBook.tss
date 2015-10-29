@@ -9,15 +9,3 @@
     textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
     width: "33%"
 }
-
-// ".left": {
-//     left: 0
-// }
-
-// ".middle": {
-//     left: "33.3%"
-// }
-
-// ".right": {
-//     left: "66.6%"
-// }

@@ -1,0 +1,7 @@
+"Label": {
+    top: 3,
+    width: Ti.UI.FILL,
+    height: 50,
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+    backgroundColor: "#c0392b"
+}

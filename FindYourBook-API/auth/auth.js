@@ -8,7 +8,6 @@ var config = require('../config');
 // Create endpoint /api/login for POST
 exports.login = function(req, res) {
     // find the user
-    console.log(req.body.username);
     User.findOne({
         username: req.body.username
     }, function(err, user) {

@@ -2,15 +2,21 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
     bcrypt   = require('bcrypt-nodejs');
 
+function checkLength (v) {
+  return v.length > 3 && v.length < 20;
+};
+
 var UserSchema = new mongoose.Schema({
   username: {
     type: String,
     unique: true,
-    required: true
+    required: true,
+    validate: [checkLength, 'Username must contains between 3 and 20 characters']
   },
   password: {
     type: String,
-    required: true
+    required: true,
+    validate: [checkLength, 'Password must contains between 3 and 20 characters']
   },
   token: {
     type: String

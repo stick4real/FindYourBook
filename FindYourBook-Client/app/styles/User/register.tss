@@ -12,3 +12,7 @@
 "#username_label": {
 	top: 100
 }
+
+"#password": {
+    passwordMask: true
+}

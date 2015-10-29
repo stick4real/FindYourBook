@@ -46,3 +46,8 @@ overrode the settings with other TSS, XML, or JS settings:
 	color: "#fff",
 	backgroundColor: "#2c3e50"
 }
+
+"#tableError": {
+    height: Ti.UI.SIZE,
+    width: Ti.UI.FILL
+}

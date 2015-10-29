@@ -1,6 +1,8 @@
 <Alloy>
 	<Window id="search" class="container">
 		<Label id="search_label">Search Books : </Label> 
+        <TableView id="tableError">
+        </TableView>
 		<TextField id="searchData" />
 		<Button id="search_button"  title="search"/>
 		<TableView id="tableBook">

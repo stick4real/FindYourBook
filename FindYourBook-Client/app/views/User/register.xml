@@ -1,6 +1,8 @@
 <Alloy>
 	<Window class="container">
 		<Label id="register_label">REGISTER</Label>
+        <TableView id="tableError">
+        </TableView>
 		<!-- <ImageView id="logo" image="/images/books8.png" /> -->
 		<Label id="username_label">username : </Label> <TextField id="username" />
 		<Label id="password_label">password : </Label> <TextField id="password" />
