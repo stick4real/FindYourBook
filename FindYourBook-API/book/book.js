@@ -7,18 +7,15 @@ var _ = require('underscore');
 exports.sell = function(req, res) {
   // Create a new instance of the Book model
 
-  var book = new Book();
+  var seed = _.pick(req.body,'googldId', 'title', 'description', 'author', 'price', 'state', 'img' );
+
+  var book = new Book(seed);
+
+  // var book = new Book();
 
   // Set the book properties that came from the POST data
-
-  book.googleId = req.body.googleId;
-  book.title = req.body.title;
-  book.description = req.body.description;
-  book.author = req.body.author;
-  book.price = req.body.price;
-  book.state = req.body.state;
+  
   book._userId = req.FYB.decoded._id;
-  book.img = req.body.img;
   book.status = true;
 
   // Save the book and check for errors

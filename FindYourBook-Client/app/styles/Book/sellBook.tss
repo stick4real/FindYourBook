@@ -8,3 +8,7 @@
 "#start_sell_button": {
 	bottom: 10
 }
+
+"#state": {
+    hintText: "bad, good or perfect",
+}
