@@ -9,17 +9,25 @@ var client = Ti.Network.createHTTPClient({
     onload : function(e) {
         var tableData = [];
         var data = JSON.parse(this.responseText);
-        $.imageBook.image = data[0].img;
-        $.bookTitle.text = data[0].title;
-        $.bookAuthor.text = data[0].author;
-        data.forEach(function(element){
-            var seller = element._userId.username;
-            var state = element.state;
-            var price = element.price;
-            var rowBook = Alloy.createController('Book/Row/rowBook', {seller: seller, state: state, price: price}).getView();
-            tableData.push(rowBook);
-        });
-        $.tableBook.setData(tableData);
+        if (data.length != 0) {
+            $.imageBook.image = data[0].img;
+            $.bookTitle.text = data[0].title;
+            $.bookAuthor.text = data[0].author;
+            data.forEach(function(element){
+                var seller = element._userId.username;
+                var state = element.state;
+                var price = element.price;
+                var rowBook = Alloy.createController('Book/Row/rowBook', {seller: seller, state: state, price: price}).getView();
+                tableData.push(rowBook);
+            });
+            $.tableBook.setData(tableData);
+        } else {
+            var dataError = [];
+            var message = "Nobody's trying to sold that book";
+            var rowError = Alloy.createController('Error/Row/rowError', {error: message}).getView();
+            dataError.push(rowError);
+            $.tableError.setData(dataError);
+        };
 
     },
     // function called when an error occurs, including a timeout

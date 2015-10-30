@@ -2,17 +2,38 @@
 	height:	50, 
 	width: Titanium.UI.FILL,
 	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-	color: "#ecf0f1",
+	color: "#c0392b",
 	backgroundColor: "#2c3e50",
 	font: {
-		fontSize: 12
+		fontSize: 15
 	}
 }
 
 "#password": {
+	hintText: "Password",
     passwordMask: true
 }
 
-"#username_label": {
-	top: 100
+"#username": {
+	top: 80,
+    hintText: "Username"
+}
+
+"#viewLogin": {
+	top: 40,
+	width: Titanium.UI.FILL,
+	height: Ti.UI.SIZE,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+}
+
+"Button": {
+	width: "80%",
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+}
+
+"#viewRegister": {
+	top: 10,
+	width: Titanium.UI.FILL,
+	height: Ti.UI.SIZE,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 }

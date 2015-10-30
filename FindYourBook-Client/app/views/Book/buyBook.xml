@@ -1,6 +1,8 @@
 <Alloy>
     <Window id="buyBook" class="container">
-        <Label id="search_label">Buy Book : </Label> 
+        <Label id="buyBook_label">Buy Book : </Label> 
+        <TableView id="tableError">
+        </TableView>
         <ImageView id="imageBook"/>
         <Label id="bookTitle"/>
         <Label id="bookAuthor"/>

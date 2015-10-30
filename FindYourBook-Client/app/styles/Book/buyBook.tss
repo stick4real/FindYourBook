@@ -1,5 +1,5 @@
-"#book_label": {
-	height:    50, 
+"#buyBook_label": {
+    height:    50, 
     width: Titanium.UI.FILL,
     textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
     color: "#c0392b",
@@ -9,15 +9,6 @@
     }
 }
 
-"#description_label": {
-    width: Ti.UI.FILL,
-    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-}
-
-"Button": {
-    width: Ti.UI.FILL,
-}
-
 "#imageBook": {
-    top: 5
+    top: 5,
 }

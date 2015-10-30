@@ -1,8 +1,10 @@
-"#profile_label": {
-	top: 5,
-	font: {
-		fontSize: 12
-	}
+"#searchData": {
+    top: 5,
+    hintText: "Name of the book, or author.."
+}
+
+"Button": {
+    width: Ti.UI.FILL,
 }
 
 "#tableBook": {

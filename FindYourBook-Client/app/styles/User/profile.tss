@@ -1,6 +1,26 @@
-"#profile_label": {
-	top: 5,
-	font: {
-		fontSize: 12
-	}
+"#username_label": {
+    height: 50, 
+    width: Titanium.UI.FILL,
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+    color: "#c0392b",
+    backgroundColor: "#2c3e50",
+    font: {
+        fontSize: 20
+    }
+}
+
+"Button": {
+    width: Ti.UI.FILL
+}
+
+"#viewProfileBooks": {
+    top: 5,
+    height: 25, 
+    width: Titanium.UI.FILL,
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+    color: "#c0392b",
+    backgroundColor: "#2c3e50",
+    font: {
+        fontSize: 15
+    }
 }
