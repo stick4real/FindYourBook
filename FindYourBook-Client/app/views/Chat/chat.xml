@@ -1,9 +1,5 @@
 <Alloy>
-    <Window class="container">
-        <Label id="chat_label">Private Messages</Label> 
-        <TableView id="tableChat">
-        </TableView>
-        <TextField id="message" />
-        <Button id="sendMSG"  title="Send"/>
+    <Window id="chatWin" title="My Chat">
+        <Widget id="chat" src="ts.chat2" />
     </Window>
 </Alloy>

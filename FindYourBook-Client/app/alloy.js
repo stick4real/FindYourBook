@@ -23,6 +23,8 @@ var ACS = require('ti.cloud'),
 
 // if not configured, just return
 if (!env || !username || !password) { return; }
+
+Alloy.Collections.discussion = Alloy.createCollection('Message');
 /**
  * Appcelerator Cloud (ACS) Admin User Login Logic
  *
